@@ -881,8 +881,8 @@ class PHPMailer
             $result .= $this->HeaderLine("Subject", $this->EncodeHeader(trim($this->Subject)));
 
         $result .= sprintf("Message-ID: <%s@%s>%s", $uniq_id, $this->ServerHostname(), $this->LE);
-        $result .= $this->HeaderLine("X-Priority", $this->Priority);
-        $result .= $this->HeaderLine("X-Mailer", "PHPMailer [version " . $this->Version . "]");
+        //$result .= $this->HeaderLine("X-Priority", $this->Priority);
+        //$result .= $this->HeaderLine("X-Mailer", "PHPMailer [version " . $this->Version . "]");
         
         if($this->ConfirmReadingTo != "")
         {
