@@ -301,13 +301,10 @@ class sfMail
 
   public function prepare()
   {
-    // Set whether the message is multipart/alternative
-    if (!empty($this->mailer->AltBody))
+    if (!$this->mailer->PreSend())
     {
-      $this->mailer->ContentType = "multipart/alternative";
+      throw new sfException($this->mailer->ErrorInfo);
     }
-
-    $this->mailer->SetMessageType();
   }
 
   public function send()
